@@ -1,0 +1,150 @@
+@red : #b33;
+@green: #080;
+@fontName : "AlexBrush-Regular";
+
+@font-face{
+  font-family: @fontName;
+//  src: url('font/@{fontName}.eot');
+  src: url('font/@{fontName}.ttf');
+  src: url('font/@{fontName}.ttf') format('truetype');
+//  url('font/@{fontName}.eot?iefix') format('eot'),
+//  url('font/@{fontName}.woff') format('woff'),
+//  url('font/@{fontName}.svg#webfont') format('svg');
+//  url('font/@{fontName}.vfb') format('vfb');
+}
+
+html,body{
+  margin:0;
+  height: 100%;
+  width: 100%;
+  font-family: @fontName, Arial, sans-serif;
+}
+
+*{
+  -webkit-backface-visibility: hidden !important;
+}
+
+.outer {
+  display: table;
+  height: 100%;
+  width: 100%;
+  background: #8b8;
+
+  .inner{
+    display: table-row;
+    width: 100%;
+
+    .cell{
+      display: table-cell;
+      vertical-align: middle;;
+
+      .paper {
+        border: 1px solid #888;
+        height: 80%;
+        width: 400px;
+        background: url('paper.jpg') repeat;
+        margin: 0 auto;
+        position: relative;
+      }
+    }
+  }
+}
+
+.head{
+  transform: rotate(-10deg);
+
+  .main{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+
+    .top{
+      width: 0px;
+      height: 0px;
+      border-style: solid;
+      border-color: transparent transparent @red;
+      border-width: 0px 100px 100px;
+    }
+    .bottom{
+      width: 0px;
+      height: 0px;
+      border-style: solid;
+      border-color: @red transparent transparent ;
+      border-width: 70px 100px 0;
+    }
+  }
+  .left{
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-color: transparent transparent @red;
+    border-width: 0px 50px 100px;
+    top: 10%;
+    left: 10%;
+  }
+  .right{
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-color: transparent transparent @red;
+    border-width: 0px 50px 100px;
+    top: 10%;
+    left: 10%;
+    margin-left: 100px;
+  }
+}
+
+.stem{
+  position: absolute;
+  left: 28%;
+  transform: rotate(17deg);
+  top: 30%;
+
+  .top{
+    height: 200px;
+    width: 16px;
+    background: @green;
+  }
+
+  .bottom{
+    height: 140px;
+    width: 16px;
+    background: @green;
+    transform: rotate(-23deg);
+    margin-left: 27px;
+    margin-top: -9px;
+  }
+}
+
+.text{
+  font-size: 60px;
+  font-style: italic;
+  position: absolute;
+  top: 36%;
+  left: 45%;
+  line-height: 50px;
+
+  p{
+    margin: 0;
+    padding: 0;
+
+    &:nth-child(2){
+      padding-left: 10%;
+    }
+
+    &:nth-child(3){
+      padding-left: 20%;
+    }
+  }
+
+
+}
+.signo{
+  font-style: italic;
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+  font-size: 30px;
+}
